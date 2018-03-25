@@ -44,6 +44,25 @@ public class TestConnect {
                 e.printStackTrace();
             }
         }
+        System.out.println("===");
+        System.out.println("冒泡");
+
+        int[] aray = {1, 3, 5, 7, 5, 6, 3, 4, 6, 9, 7, 8};
+
+        for (int i = 0; i < aray.length - 1; i++) {
+            for (int j = 0; j < aray.length - i - 1; j++) {
+                if (aray[j + 1] < aray[j]) {
+                    int temp = aray[j];
+                    aray[j] = aray[j + 1];
+                    aray[j + 1] = temp;
+                }
+            }
+        }
+
+        for (int ayay_ : aray) {
+            System.out.print(ayay_);
+        }
+
     }
 
 
