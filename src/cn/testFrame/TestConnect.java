@@ -1,19 +1,68 @@
 package cn.testFrame;
 
+import cn.testFrame.model.User;
+import cn.testFrame.utils.SqlSessionUtil;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.reflection.SystemMetaObject;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
+import java.util.List;
 
 public class TestConnect {
 
-    public TestConnect() {
+
+    public static void main(String[] args) {
+
+        TestConnect_02();
+        //TestConnect();
+    }
+
+    private static void TestConnect_02() {
+
+           /* SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
+            InputStream resourceAsStream = Resources.getResourceAsStream("mybatisConfig.xml");
+            SqlSessionFactory build = sqlSessionFactoryBuilder.build(resourceAsStream);
+            SqlSession sqlSession = build.openSession();*/
+
+            SqlSession session = SqlSessionUtil.getSession();
+            System.out.println("sesssion对象及其地址==="+session);
+            User user = session.selectOne("selectUserById",1);
+            System.out.print(user);
+            //session.close();
+
+            //SqlSession session1 = SqlSessionUtil.getSession();
+            //session == session1  所引用的地址一致 , 继续查询不需要进行关闭  //Executor was closed.
+            System.out.println("sesssion对象及其地址==="+session);
+            List<User> selectUserByName = session.selectList("selectUserByName", "2");
+            for (User user1 : selectUserByName){
+                System.out.println("模糊查询出来的用户名称为====="+user1);
+            }
+
+           /* user.setName(444);
+            user.setAge(4444);
+            session.insert("saveUser",user);
+            session.commit();*/
+            System.out.println("查询新用户");
+            List<User> selectUserList = session.selectList("selectUserList");
+            for(User u : selectUserList)
+            {
+                System.out.println(u);
+            }
 
     }
 
-    public static void main(String[] args) {
+
+
+    public static void TestConnect() {
 
         Connection connection = null;
         Statement statement = null;
         ResultSet resultSet = null;
-
         try {
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -63,7 +112,7 @@ public class TestConnect {
             System.out.print(ayay_);
         }
 
-    }
 
+    }
 
 }
