@@ -42,7 +42,6 @@ public class TestConnect {
             for (User user1 : selectUserByName){
                 System.out.println("模糊查询出来的用户名称为====="+user1);
             }
-
            /* user.setName(444);
             user.setAge(4444);
             session.insert("saveUser",user);
@@ -111,6 +110,7 @@ public class TestConnect {
         for (int ayay_ : aray) {
             System.out.print(ayay_);
         }
+
 
 
     }
