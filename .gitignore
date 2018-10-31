@@ -11,5 +11,6 @@ target/
 bin/
 
 # intellij IDEA
-.idea/
+.idea/*
 *.iml
+*.jar
