@@ -1,4 +1,4 @@
-package cn.testFrame.jieshiqi;
+package cn.testFrame.design.jieshiqi;
 
 public class TerminalExpression implements Expression {
 

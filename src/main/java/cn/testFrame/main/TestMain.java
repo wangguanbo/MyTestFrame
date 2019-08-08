@@ -1,4 +1,4 @@
-package cn.testFrame.Main;
+package cn.testFrame.main;
 
 import cn.testFrame.model.User;
 

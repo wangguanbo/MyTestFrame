@@ -1,4 +1,4 @@
-package cn.testFrame.Main;
+package cn.testFrame.main;
 
 import javax.swing.*;
 import java.awt.*;

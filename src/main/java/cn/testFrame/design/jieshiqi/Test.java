@@ -1,4 +1,4 @@
-package cn.testFrame.jieshiqi;
+package cn.testFrame.design.jieshiqi;
 
 public class Test {
     public static void main(String[] args) {
