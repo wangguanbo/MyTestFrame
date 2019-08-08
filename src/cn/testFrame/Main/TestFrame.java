@@ -43,7 +43,6 @@ public class TestFrame extends JFrame implements ActionListener {
         add(jButton2);
     }
 
-    @Override
     public void actionPerformed(ActionEvent actionEvent) {
         Object source = actionEvent.getSource();
         int sumNum = 0;
