@@ -22,7 +22,6 @@ public class TestMain {
         //System.out.println(2<<2);
         //priorityBlockingQueueTest();
         //concurrentHashMapTest();
-
         JFrame j = new JFrame("我得第一个窗口");
         j.setSize(255,255);
         j.getContentPane().add(new JButton("我是一个按钮"));
